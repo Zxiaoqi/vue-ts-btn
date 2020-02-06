@@ -45,7 +45,7 @@ import Uibtn from '@/components/Uibtn/Uibtn.vue'
 })
 
 export default class Home extends Vue {
-
+    //属性设置，初始化
     private xsmall:boolean=false 
     private small:boolean=false 
     private large:boolean=false 
@@ -54,10 +54,11 @@ export default class Home extends Vue {
     private rounded:boolean=false 
     private circle:boolean=false 
     private disabled:boolean=false
-
+    //禁用方法
     private changeDisabled() {
         this.disabled=!this.disabled
     }
+    //改变按钮边框弧度方法
     private changeRadius(name:String) {
         switch (name) {
             case 'tile':
@@ -82,6 +83,7 @@ export default class Home extends Vue {
                 break;
         }
     }
+    //改变按钮大小方法
     private resize(name:String){
         switch (name) {
             case 'xsmall':
@@ -116,10 +118,9 @@ export default class Home extends Vue {
                 break;
         }
     }
-
+    //按钮监听
     private onClick(event:MouseEvent){
        console.log(event);
-       
    }
 }
 

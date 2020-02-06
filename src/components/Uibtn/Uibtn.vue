@@ -43,6 +43,7 @@ export default class Uibtn extends Vue {
     //监听父组件的点击事件
     @Emit('click') private emitClickEvent(evnet:MouseEvent){}
 
+    //私有计算属性
     private get TintColor(){
         if(this.color){
             return this.color
@@ -50,6 +51,7 @@ export default class Uibtn extends Vue {
             return '#2d8cf0'
         }
     }
+    //监听按钮
     private onClickBtn(event:MouseEvent){
         if(!this.disabled){
             this.emitClickEvent(event);
@@ -60,13 +62,15 @@ export default class Uibtn extends Vue {
 </script>
     
 <style lang="stylus">
+//类似less的样式函数
 resize(minWidth,height,paddingLR,fontSize)
     min-width minWidth
     height height
     padding 0 paddingLR
     font-size fontSize
+    //关联样式
     &.ui-btn-rounded,&.ui-btn-circle
-        border-radius (@height/2)
+        border-radius (@height/2) //属性计算
     &.ui-btn-circle
         width @height
         min-width 0
@@ -76,7 +80,7 @@ resize(minWidth,height,paddingLR,fontSize)
     border 0 
     border-radius 4px
     box-shadow  0px 0px 3px 1px #6dbbf9
-    background-color  var(--color-tint)
+    background-color  var(--color-tint) //属性方法
     cursor pointer
     user-select none
     outline none
