@@ -120,7 +120,7 @@ export default class Home extends Vue {
     }
     //按钮监听
     private onClick(event:MouseEvent){
-       console.log(event);
+    //    console.log(event);
    }
 }
 
