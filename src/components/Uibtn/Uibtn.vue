@@ -41,7 +41,7 @@ export default class Uibtn extends Vue {
 
 
     //监听父组件的点击事件
-    @Emit('click') private emitClickEvent(evnet:MouseEvent){}
+    @Emit('click') private emitClickEvent(event:MouseEvent){}
 
     //私有计算属性
     private get TintColor(){
